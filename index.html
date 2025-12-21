@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO / Référencement Google -->
+    <title>ACAMAJ - Association des Cadres Médicaux "Jo" | Bandjoun & Yaoundé</title>
+    <meta name="description" content="ACAMAJ (souvent écrit ACAMEJ) : Association des Cadres Médicaux Jo. Solidarité, entraide et développement sanitaire pour le village Bandjoun et le Cameroun.">
+    <meta name="keywords" content="ACAMAJ, ACAMEJ, Cadres Médicaux Jo, Bandjoun, Médecine Cameroun, Solidarité médicale, Association médicale Yaoundé, Pius TUENO">
+    <meta name="author" content="ACAMAJ">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .african-pattern {
+            background-color: #fdfaf6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5dcd3' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .logo-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-teal-600 p-2 rounded-lg text-white shadow-lg">
+                    <i data-lucide="heart-pulse"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-teal-900">ACAMAJ</span>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-stone-600">
+                <a href="#accueil" class="hover:text-teal-600 transition">Accueil</a>
+                <a href="#objectifs" class="hover:text-teal-600 transition">Objectifs</a>
+                <a href="#equipe" class="hover:text-teal-600 transition">Les membres</a>
+                <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
+            </div>
+            <button class="bg-teal-700 text-white px-5 py-2 rounded-full font-semibold hover:bg-teal-800 transition shadow-lg shadow-teal-700/20">
+                Nous Rejoindre
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative overflow-hidden bg-stone-100 african-pattern py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+                <span class="inline-block px-4 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-bold mb-6">
+                    Établie en 2010 • Yaoundé, Cameroun
+                </span>
+                <h1 class="text-5xl lg:text-7xl font-heading text-stone-900 leading-tight mb-6">
+                    L'excellence médicale au cœur de la <span class="text-teal-700">solidarité Jo</span>.
+                </h1>
+                <p class="text-lg text-stone-600 mb-8 max-w-lg leading-relaxed">
+                    L'Association des Cadres Médicaux "Jo" (souvent mentionnée comme **ACAMAJ** ou par erreur **ACAMEJ**) rassemble l'expertise pour contribuer au développement sanitaire de Bandjoun.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#objectifs" class="bg-stone-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-stone-800 transition">Nos Missions</a>
+                    <div class="flex items-center gap-3 px-6 py-4">
+                        <i data-lucide="shield-check" class="text-teal-600"></i>
+                        <span class="font-semibold text-stone-700 text-sm">Légalisée en Février 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-square bg-teal-800 rounded-3xl overflow-hidden shadow-2xl relative">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800" alt="Médical Afrique" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                        <p class="text-white text-xl font-heading italic">"L'amour, la solidarité et l'entraide pour un avenir meilleur à Bandjoun."</p>
+                    </div>
+                </div>
+                <!-- <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl max-w-xs border border-stone-100">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-orange-100 p-3 rounded-full text-orange-600">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-stone-500 font-bold uppercase tracking-wider">Siège Social</p>
+                            <p class="font-bold text-stone-800">Yaoundé, Cameroun</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Objectifs -->
+    <section id="objectifs" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-heading mb-4 text-stone-900">Notre Mission Sociale</h2>
+            <div class="h-1.5 w-24 bg-teal-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="bg-stone-50 p-10 rounded-3xl border border-stone-100 card-hover">
+                <div class="bg-teal-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-600/30">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Solidarité & Entraide</h3>
+                <p class="text-stone-600 leading-relaxed">
+                    Rassembler les cadres médicaux « Jo » pour développer entre eux l’amour, la solidarité et un soutien mutuel constant.
+                </p>
+            </div>
+
+            <div class="bg-stone-900 text-white p-10 rounded-3xl card-hover">
+                <div class="bg-orange-500 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30">
+                    <i data-lucide="hospital"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Développement Local</h3>
+                <p class="text-stone-300 leading-relaxed">
+                    Contribuer activement au développement social, culturel et sanitaire de notre village Bandjoun à travers des actions concrètes.
+                </p>
+            </div>
+
+            <div class="bg-stone-50 p-10 rounded-3xl border border-stone-100 card-hover">
+                <div class="bg-teal-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-600/30">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Développement Pro</h3>
+                <p class="text-stone-600 leading-relaxed">
+                    Aider à l’information continue et au développement professionnel de tous nos membres cadres de santé.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="equipe" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-heading mb-4">Gouvernance & Fondations</h2>
+                    <p class="text-stone-600 max-w-xl">Portée par une vision commune depuis 2010, notre association est dirigée par des professionnels dévoués.</p>
+                </div>
+                <div class="bg-white px-6 py-4 rounded-2xl shadow-sm border border-stone-200">
+                    <p class="text-xs text-stone-500 uppercase tracking-widest font-bold mb-1">Président Actuel</p>
+                    <p class="text-xl font-bold text-teal-800">Pius TUENO</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-3 bg-white p-8 rounded-3xl border border-stone-200 shadow-sm">
+                    <h3 class="text-lg font-bold mb-8 flex items-center gap-2">
+                        <i data-lucide="award" class="text-orange-500"></i>
+                        Membres Fondateurs
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">Leon Tamoke</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">Chandor Fotso</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">François Guembu</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">Emmanuel Kuate</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">Telesphore Kayo</p>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-stone-100 rounded-full mx-auto mb-3 flex items-center justify-center text-stone-400 group-hover:bg-teal-100 group-hover:text-teal-600 transition">
+                                <i data-lucide="user"></i>
+                            </div>
+                            <p class="font-bold text-sm">Rene Kengne</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References / Partenaires Section -->
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 mb-20">
+            <div>
+                <h2 class="text-4xl font-heading mb-6">Contactez l'ACAMAJ</h2>
+                <p class="text-stone-400 mb-8 leading-relaxed">
+                    Vous souhaitez en savoir plus sur nos actions ou rejoindre l'association ? N'hésitez pas à nous contacter à notre siège à Yaoundé.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-teal-500">
+                            <i data-lucide="mail" size="20"></i>
+                        </div>
+                        <span>contact@acamaj.org</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-teal-500">
+                            <i data-lucide="map-pin" size="20"></i>
+                        </div>
+                        <span>Yaoundé, Cameroun</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-stone-800 p-8 rounded-3xl">
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message envoyé ! (Démo)');">
+                    <input type="text" placeholder="Votre nom" class="w-full bg-stone-700 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none transition text-white">
+                    <input type="email" placeholder="Votre email" class="w-full bg-stone-700 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none transition text-white">
+                    <textarea placeholder="Votre message" rows="4" class="w-full bg-stone-700 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-teal-500 outline-none transition text-white"></textarea>
+                    <button class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-teal-600/20">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-stone-500">
+            <p>© 2025 ACAMAJ (ACAMEJ) - Association des Cadres Médicaux "Jo". Tous droits réservés.</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition">Mentions Légales</a>
+                <a href="#" class="hover:text-white transition">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
