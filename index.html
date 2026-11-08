@@ -293,37 +293,50 @@
             </p>
         </div>
 
+        <!-- Galerie photos -->
         <div class="max-w-5xl mx-auto px-6">
             <div id="carousel" class="relative rounded-3xl overflow-hidden shadow-2xl bg-stone-900" aria-roledescription="carrousel" aria-label="Photos des activités de l'ACAMEJ">
-                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
-                    <div class="w-full shrink-0 aspect-[4/3]">
-                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.22.jpeg" alt="Activité de l'ACAMEJ - photo 1" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <div class="w-full shrink-0 aspect-[4/3]">
-                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.23.jpeg" alt="Activité de l'ACAMEJ - photo 2" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <div class="w-full shrink-0 aspect-[4/3]">
-                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.51.jpeg" alt="Activité de l'ACAMEJ - photo 3" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <div class="w-full shrink-0 aspect-[4/3]">
-                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.40.42.jpeg" alt="Activité de l'ACAMEJ - photo 4" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                </div>
+                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out"></div>
 
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
 
-                <button id="carousel-prev" type="button" aria-label="Photo précédente" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
+                <button id="carousel-prev" type="button" aria-label="Photo précédente" class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
                     <i data-lucide="chevron-left"></i>
                 </button>
-                <button id="carousel-next" type="button" aria-label="Photo suivante" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
+                <button id="carousel-next" type="button" aria-label="Photo suivante" class="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
                     <i data-lucide="chevron-right"></i>
                 </button>
 
-                <div id="carousel-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2"></div>
+                <div id="carousel-counter" class="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-sm font-semibold" aria-live="polite"></div>
+            </div>
+
+            <!-- Miniatures -->
+            <div id="carousel-thumbs" class="mt-6 flex gap-3 overflow-x-auto pb-2 scroll-smooth"></div>
+        </div>
+
+        <!-- Espace vidéo -->
+        <div class="max-w-5xl mx-auto px-6 mt-24">
+            <div class="bg-stone-900 text-white rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center shadow-2xl">
+                <div>
+                    <div class="bg-orange-500 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30">
+                        <i data-lucide="clapperboard"></i>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-heading mb-4">En vidéo</h3>
+                    <p class="text-stone-300 leading-relaxed">
+                        Revivez en quelques instants l'ambiance de nos rencontres : des moments de partage et de solidarité entre les cadres médicaux « Jo ».
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-xs aspect-[9/16] rounded-3xl overflow-hidden bg-black ring-4 ring-teal-600/40 shadow-xl">
+                        <video controls preload="metadata" playsinline class="w-full h-full object-contain">
+                            <source src="assets/img/evenements/WhatsApp%20Video%202026-11-08%20at%2017.34.15.mp4" type="video/mp4">
+                            Votre navigateur ne permet pas de lire cette vidéo.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- References / Partenaires Section -->
 
     <!-- Footer -->
@@ -395,32 +408,66 @@
 
         // Carrousel des activités
         (function () {
+            const photos = [
+                'WhatsApp Image 2026-11-08 at 14.39.19.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.20.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.20 (1).jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.21.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.22.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.22 (1).jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.22 (2).jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.23.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.50.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.51.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.39.52.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.40.42.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.40.43.jpeg',
+                'WhatsApp Image 2026-11-08 at 14.40.43 (1).jpeg',
+                'WhatsApp Image 2026-11-08 at 14.41.04.jpeg',
+                'WhatsApp Image 2026-11-08 at 17.08.44.jpeg',
+                'WhatsApp Image 2026-11-08 at 17.08.46.jpeg',
+                'WhatsApp Image 2026-11-08 at 17.08.47.jpeg',
+                'WhatsApp Image 2026-11-08 at 17.35.36.jpeg'
+            ].map(name => 'assets/img/evenements/' + encodeURIComponent(name));
+
             const carousel = document.getElementById('carousel');
             const track = document.getElementById('carousel-track');
-            const slides = track.children;
-            const dotsContainer = document.getElementById('carousel-dots');
+            const thumbsContainer = document.getElementById('carousel-thumbs');
+            const counter = document.getElementById('carousel-counter');
             let current = 0;
             let timer;
 
-            const dots = Array.from(slides).map((_, i) => {
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.setAttribute('aria-label', 'Aller à la photo ' + (i + 1));
-                dot.className = 'h-2.5 rounded-full transition-all duration-300';
-                dot.addEventListener('click', () => { goTo(i); restart(); });
-                dotsContainer.appendChild(dot);
-                return dot;
+            photos.forEach((src, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'w-full shrink-0 aspect-[4/3]';
+                slide.innerHTML = '<img src="' + src + '" alt="Activité de l\'ACAMEJ - photo ' + (i + 1) + '" class="w-full h-full object-contain" ' + (i > 0 ? 'loading="lazy"' : '') + '>';
+                track.appendChild(slide);
+            });
+
+            const thumbs = photos.map((src, i) => {
+                const thumb = document.createElement('button');
+                thumb.type = 'button';
+                thumb.setAttribute('aria-label', 'Afficher la photo ' + (i + 1));
+                thumb.className = 'shrink-0 w-20 h-16 md:w-24 md:h-[72px] rounded-xl overflow-hidden ring-2 ring-offset-2 transition';
+                thumb.innerHTML = '<img src="' + src + '" alt="" class="w-full h-full object-cover" loading="lazy">';
+                thumb.addEventListener('click', () => { goTo(i); restart(); });
+                thumbsContainer.appendChild(thumb);
+                return thumb;
             });
 
             function goTo(index) {
-                current = (index + slides.length) % slides.length;
+                current = (index + photos.length) % photos.length;
                 track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('w-8', i === current);
-                    dot.classList.toggle('bg-teal-500', i === current);
-                    dot.classList.toggle('w-2.5', i !== current);
-                    dot.classList.toggle('bg-white/70', i !== current);
+                counter.textContent = (current + 1) + ' / ' + photos.length;
+                thumbs.forEach((thumb, i) => {
+                    const active = i === current;
+                    thumb.classList.toggle('ring-teal-600', active);
+                    thumb.classList.toggle('opacity-100', active);
+                    thumb.classList.toggle('ring-transparent', !active);
+                    thumb.classList.toggle('opacity-60', !active);
                 });
+                const t = thumbs[current];
+                thumbsContainer.scrollTo({ left: t.offsetLeft - (thumbsContainer.clientWidth - t.clientWidth) / 2, behavior: 'smooth' });
             }
 
             function restart() {
