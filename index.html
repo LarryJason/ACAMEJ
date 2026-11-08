@@ -61,6 +61,7 @@
                 <a href="#accueil" class="hover:text-teal-600 transition">Accueil</a>
                 <a href="#objectifs" class="hover:text-teal-600 transition">Objectifs</a>
                 <a href="#equipe" class="hover:text-teal-600 transition">Les membres</a>
+                <a href="#activites" class="hover:text-teal-600 transition">Activités</a>
                 <a href="#contact" class="hover:text-teal-600 transition">Contact</a>
             </div>
             <button class="bg-teal-700 text-white px-5 py-2 rounded-full font-semibold hover:bg-teal-800 transition shadow-lg shadow-teal-700/20">
@@ -282,6 +283,47 @@
         </div>
     </section>
 
+    <!-- Activités Section -->
+    <section id="activites" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-heading mb-4 text-stone-900">Nos Activités</h2>
+            <div class="h-1.5 w-24 bg-teal-600 mx-auto rounded-full mb-6"></div>
+            <p class="text-stone-600 max-w-2xl mx-auto leading-relaxed">
+                Retour en images sur les rencontres et événements qui rythment la vie de notre association.
+            </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6">
+            <div id="carousel" class="relative rounded-3xl overflow-hidden shadow-2xl bg-stone-900" aria-roledescription="carrousel" aria-label="Photos des activités de l'ACAMEJ">
+                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                    <div class="w-full shrink-0 aspect-[4/3]">
+                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.22.jpeg" alt="Activité de l'ACAMEJ - photo 1" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="w-full shrink-0 aspect-[4/3]">
+                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.23.jpeg" alt="Activité de l'ACAMEJ - photo 2" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="w-full shrink-0 aspect-[4/3]">
+                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.39.51.jpeg" alt="Activité de l'ACAMEJ - photo 3" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="w-full shrink-0 aspect-[4/3]">
+                        <img src="assets/img/evenements/WhatsApp%20Image%202026-11-08%20at%2014.40.42.jpeg" alt="Activité de l'ACAMEJ - photo 4" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+                <button id="carousel-prev" type="button" aria-label="Photo précédente" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button id="carousel-next" type="button" aria-label="Photo suivante" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 backdrop-blur-md text-teal-900 flex items-center justify-center shadow-lg hover:bg-white transition">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+
+                <div id="carousel-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- References / Partenaires Section -->
 
     <!-- Footer -->
@@ -350,6 +392,59 @@
                 });
             });
         });
+
+        // Carrousel des activités
+        (function () {
+            const carousel = document.getElementById('carousel');
+            const track = document.getElementById('carousel-track');
+            const slides = track.children;
+            const dotsContainer = document.getElementById('carousel-dots');
+            let current = 0;
+            let timer;
+
+            const dots = Array.from(slides).map((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', 'Aller à la photo ' + (i + 1));
+                dot.className = 'h-2.5 rounded-full transition-all duration-300';
+                dot.addEventListener('click', () => { goTo(i); restart(); });
+                dotsContainer.appendChild(dot);
+                return dot;
+            });
+
+            function goTo(index) {
+                current = (index + slides.length) % slides.length;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('w-8', i === current);
+                    dot.classList.toggle('bg-teal-500', i === current);
+                    dot.classList.toggle('w-2.5', i !== current);
+                    dot.classList.toggle('bg-white/70', i !== current);
+                });
+            }
+
+            function restart() {
+                clearInterval(timer);
+                timer = setInterval(() => goTo(current + 1), 5000);
+            }
+
+            document.getElementById('carousel-prev').addEventListener('click', () => { goTo(current - 1); restart(); });
+            document.getElementById('carousel-next').addEventListener('click', () => { goTo(current + 1); restart(); });
+            carousel.addEventListener('mouseenter', () => clearInterval(timer));
+            carousel.addEventListener('mouseleave', restart);
+
+            let startX = null;
+            carousel.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+            carousel.addEventListener('touchend', (e) => {
+                if (startX === null) return;
+                const dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 50) { goTo(current + (dx < 0 ? 1 : -1)); restart(); }
+                startX = null;
+            });
+
+            goTo(0);
+            restart();
+        })();
     </script>
 </body>
 </html>
